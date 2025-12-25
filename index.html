@@ -3,173 +3,351 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sonic Clean - Privacy Policy / Gizlilik Politikası</title>
+    <title>Sonic Clean - Privacy Policy</title>
+    <link rel="icon" href="favicon.png?v=99" type="image/png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #f59e0b; text-align: center; }
-        h2 { color: #4b5563; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 30px; }
-        .lang-section { margin-bottom: 50px; padding: 20px; background: #f9fafb; border-radius: 8px; }
-        .anchor { scroll-margin-top: 20px; }
-        nav { text-align: center; margin-bottom: 30px; }
-        nav a { margin: 0 5px; text-decoration: none; color: #3b82f6; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
+        /* MODERN DARK THEME VARIABLES */
+        :root {
+            --bg-dark: #09090b;
+            --bg-card: rgba(39, 39, 42, 0.6);
+            --primary: #3b82f6;
+            --primary-hover: #2563eb;
+            --text-main: #e4e4e7;
+            --text-muted: #a1a1aa;
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(147, 51, 234, 0.08) 0%, transparent 40%);
+            line-height: 1.7;
+            padding-bottom: 50px;
+        }
+
+        /* HEADER - GÜNCELLENDİ (Ana site stili) */
+        header {
+            display: flex;
+            justify-content: center; /* Ortaya hizala */
+            align-items: center;
+            padding: 20px 8%;
+            /* Dil menüsü hemen altında olduğu için alt çizgiyi kaldırdık, daha temiz dursun */
+        }
+
+        /* ANA SİTE İLE AYNI YAZI STİLİ */
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* STICKY LANGUAGE NAV */
+        .lang-nav-container {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 15px 0;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            border-top: 1px solid var(--glass-border); /* Üste de ince çizgi ekledik */
+        }
+
+        .lang-nav {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 20px;
+        }
+
+        .lang-btn {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: #fff;
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .policy-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            scroll-margin-top: 100px; 
+        }
+
+        .policy-card h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-card h3 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .policy-card p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .policy-card ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .policy-card li {
+            margin-bottom: 5px;
+        }
+
+        /* ARABIC RTL SUPPORT */
+        .rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .rtl ul {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            opacity: 0.6;
+            padding-bottom: 20px;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (max-width: 600px) {
+            .policy-card { padding: 25px; }
+        }
     </style>
 </head>
 <body>
 
-    <h1>Sonic Clean - Privacy Policy</h1>
+    <header>
+        <a href="https://ayazsoftware.com/" class="brand">AyazSoftware</a>
+    </header>
 
-    <nav>
-        <a href="#tr">Türkçe</a> |
-        <a href="#en">English</a> |
-        <a href="#es">Español</a> |
-        <a href="#de">Deutsch</a> |
-        <a href="#fr">Français</a> |
-        <a href="#it">Italiano</a> |
-        <a href="#pt">Português</a> |
-        <a href="#ar">العربية</a>
-    </nav>
-
-    <div id="tr" class="lang-section anchor" lang="tr">
-        <h2>Gizlilik Politikası (Türkçe)</h2>
-        <p><strong>Son Güncelleme:</strong> 14.12.2025</p>
-        <p>Bu gizlilik politikası, "Sonic Clean" uygulaması ("Uygulama") tarafından toplanan verilerin nasıl kullanıldığını açıklar. Uygulamayı indirerek ve kullanarak bu politikayı kabul etmiş sayılırsınız.</p>
-        
-        <h3>1. Tarafımızca Toplanan Kişisel Veriler</h3>
-        <p>Uygulama, geliştirici olarak bizim tarafımızdan kullanıcıların adı, e-posta adresi, telefon numarası veya tam konumu gibi kişisel olarak tanımlanabilir bilgilerini doğrudan <strong>TOPLAMAZ</strong>.</p>
-        
-        <h3>2. Üçüncü Taraf Hizmetler ve Reklamlar</h3>
-        <p>Uygulamayı ücretsiz olarak sunabilmek için, reklam gösterimi amacıyla üçüncü taraf hizmet sağlayıcılarla (örneğin, Google AdMob) çalışmaktayız.</p>
-        <p>Bu üçüncü taraf hizmetler, size alakalı reklamlar göstermek, reklam performansını ölçmek, analitik sağlamak ve dolandırıcılığı önlemek amacıyla aşağıdaki gibi verileri otomatik olarak toplayabilir ve işleyebilir:</p>
-        <ul>
-            <li>Cihaz Tanımlayıcıları (Örn: Advertising ID)</li>
-            <li>IP Adresi</li>
-            <li>Yaklaşık Konum Verileri (IP adresine dayalı)</li>
-            <li>Cihaz Modeli, İşletim Sistemi Sürümü gibi teknik bilgiler</li>
-            <li>Çerezler ve benzeri izleme teknolojileri</li>
-        </ul>
-        <p>Bu verilerin işlenmesi, ilgili üçüncü taraf hizmet sağlayıcıların kendi gizlilik politikalarına tabidir.</p>
-
-        <h3>3. Cihaz İzinleri</h3>
-        <p>Uygulama, temel işlevini yerine getirebilmek için cihazınızın <strong>hoparlörüne erişim</strong> iznine ihtiyaç duyar. Bu izin, yalnızca temizlik işlemi için gerekli olan ses dalgalarını ve titreşimleri üretmek amacıyla kullanılır. Uygulama hiçbir zaman ortam seslerini dinlemez veya kaydetmez.</p>
-
-        <h3>4. İletişim</h3>
-        <p>Bu gizlilik politikasıyla ilgili herhangi bir sorunuz veya endişeniz varsa, lütfen bizimle iletişime geçin:</p>
-        <p>E-posta: [burak_ayazz@icloud.com]</p>
+    <div class="lang-nav-container">
+        <nav class="lang-nav">
+            <a href="#tr" class="lang-btn">Türkçe</a>
+            <a href="#en" class="lang-btn">English</a>
+            <a href="#es" class="lang-btn">Español</a>
+            <a href="#de" class="lang-btn">Deutsch</a>
+            <a href="#fr" class="lang-btn">Français</a>
+            <a href="#it" class="lang-btn">Italiano</a>
+            <a href="#pt" class="lang-btn">Português</a>
+            <a href="#ar" class="lang-btn">العربية</a>
+        </nav>
     </div>
 
-    <div id="en" class="lang-section anchor" lang="en">
-        <h2>Privacy Policy (English)</h2>
-        <p><strong>Last Updated:</strong> December 14, 2025</p>
-        <p>This privacy policy explains how data collected by the "Sonic Clean" application ("App") is used. By downloading and using the App, you agree to this policy.</p>
-        
-        <h3>1. Personal Data Collected by Us</h3>
-        <p>The App does <strong>NOT</strong> directly collect personally identifiable information such as user names, email addresses, phone numbers, or precise location by us as the developer.</p>
-        
-        <h3>2. Third-Party Services and Ads</h3>
-        <p>To provide the App for free, we work with third-party service providers (e.g., Google AdMob) for ad display purposes.</p>
-        <p>These third-party services may automatically collect and process data such as the following to show relevant ads, measure ad performance, provide analytics, and prevent fraud:</p>
-        <ul>
-            <li>Device Identifiers (e.g., Advertising ID)</li>
-            <li>IP Address</li>
-            <li>Approximate Location Data (based on IP address)</li>
-            <li>Technical information such as Device Model, Operating System Version</li>
-            <li>Cookies and similar tracking technologies</li>
-        </ul>
-        <p>The processing of this data is subject to the privacy policies of the respective third-party service providers.</p>
+    <div class="container">
 
-        <h3>3. Device Permissions</h3>
-        <p>The App requires access permission to your device's <strong>speaker</strong> to perform its core function. This permission is used solely to generate sound waves and vibrations necessary for the cleaning process. The App never listens to or records ambient sounds.</p>
+        <div id="tr" class="policy-card">
+            <h2><i class="fas fa-shield-alt"></i> Gizlilik Politikası (Türkçe)</h2>
+            <p><strong>Son Güncelleme:</strong> 14.12.2025</p>
+            <p>Bu gizlilik politikası, "Sonic Clean" uygulaması ("Uygulama") tarafından toplanan verilerin nasıl kullanıldığını açıklar. Uygulamayı indirerek ve kullanarak bu politikayı kabul etmiş sayılırsınız.</p>
+            
+            <h3>1. Tarafımızca Toplanan Kişisel Veriler</h3>
+            <p>Uygulama, geliştirici olarak bizim tarafımızdan kullanıcıların adı, e-posta adresi, telefon numarası veya tam konumu gibi kişisel olarak tanımlanabilir bilgilerini doğrudan <strong>TOPLAMAZ</strong>.</p>
+            
+            <h3>2. Üçüncü Taraf Hizmetler ve Reklamlar</h3>
+            <p>Uygulamayı ücretsiz olarak sunabilmek için, reklam gösterimi amacıyla üçüncü taraf hizmet sağlayıcılarla (örneğin, Google AdMob) çalışmaktayız.</p>
+            <p>Bu üçüncü taraf hizmetler, size alakalı reklamlar göstermek, reklam performansını ölçmek, analitik sağlamak ve dolandırıcılığı önlemek amacıyla aşağıdaki gibi verileri otomatik olarak toplayabilir ve işleyebilir:</p>
+            <ul>
+                <li>Cihaz Tanımlayıcıları (Örn: Advertising ID)</li>
+                <li>IP Adresi</li>
+                <li>Yaklaşık Konum Verileri (IP adresine dayalı)</li>
+                <li>Cihaz Modeli, İşletim Sistemi Sürümü gibi teknik bilgiler</li>
+                <li>Çerezler ve benzeri izleme teknolojileri</li>
+            </ul>
+            <p>Bu verilerin işlenmesi, ilgili üçüncü taraf hizmet sağlayıcıların kendi gizlilik politikalarına tabidir.</p>
 
-        <h3>4. Contact</h3>
-        <p>If you have any questions or concerns about this privacy policy, please contact us:</p>
-        <p>Email: [burak_ayazz@icloud.com]</p>
+            <h3>3. Cihaz İzinleri</h3>
+            <p>Uygulama, temel işlevini yerine getirebilmek için cihazınızın <strong>hoparlörüne erişim</strong> iznine ihtiyaç duyar. Bu izin, yalnızca temizlik işlemi için gerekli olan ses dalgalarını ve titreşimleri üretmek amacıyla kullanılır. Uygulama hiçbir zaman ortam seslerini dinlemez veya kaydetmez.</p>
+
+            <h3>4. İletişim</h3>
+            <p>Bu gizlilik politikasıyla ilgili herhangi bir sorunuz veya endişeniz varsa, lütfen bizimle iletişime geçin:</p>
+            <p>E-posta: <strong>burak_ayazz@icloud.com</strong></p>
+        </div>
+
+        <div id="en" class="policy-card">
+            <h2><i class="fas fa-globe"></i> Privacy Policy (English)</h2>
+            <p><strong>Last Updated:</strong> December 14, 2025</p>
+            <p>This privacy policy explains how data collected by the "Sonic Clean" application ("App") is used. By downloading and using the App, you agree to this policy.</p>
+            
+            <h3>1. Personal Data Collected by Us</h3>
+            <p>The App does <strong>NOT</strong> directly collect personally identifiable information such as user names, email addresses, phone numbers, or precise location by us as the developer.</p>
+            
+            <h3>2. Third-Party Services and Ads</h3>
+            <p>To provide the App for free, we work with third-party service providers (e.g., Google AdMob) for ad display purposes.</p>
+            <p>These third-party services may automatically collect and process data such as the following to show relevant ads, measure ad performance, provide analytics, and prevent fraud:</p>
+            <ul>
+                <li>Device Identifiers (e.g., Advertising ID)</li>
+                <li>IP Address</li>
+                <li>Approximate Location Data (based on IP address)</li>
+                <li>Technical information such as Device Model, Operating System Version</li>
+                <li>Cookies and similar tracking technologies</li>
+            </ul>
+            <p>The processing of this data is subject to the privacy policies of the respective third-party service providers.</p>
+
+            <h3>3. Device Permissions</h3>
+            <p>The App requires access permission to your device's <strong>speaker</strong> to perform its core function. This permission is used solely to generate sound waves and vibrations necessary for the cleaning process. The App never listens to or records ambient sounds.</p>
+
+            <h3>4. Contact</h3>
+            <p>If you have any questions or concerns about this privacy policy, please contact us:</p>
+            <p>Email: <strong>burak_ayazz@icloud.com</strong></p>
+        </div>
+
+        <div id="es" class="policy-card">
+            <h2><i class="fas fa-flag"></i> Política de Privacidad (Español)</h2>
+            <p><strong>Última actualización:</strong> 14 de diciembre de 2025</p>
+            <p>Esta política de privacidad explica cómo se utilizan los datos recopilados por la aplicación "Sonic Clean" ("la Aplicación"). Al descargar y utilizar la Aplicación, usted acepta esta política.</p>
+            <h3>1. Datos personales recopilados por nosotros</h3>
+            <p>La Aplicación <strong>NO</strong> recopila directamente información de identificación personal como nombres de usuario, direcciones de correo electrónico, números de teléfono o ubicación precisa por nuestra parte como desarrollador.</p>
+            <h3>2. Servicios de terceros y anuncios</h3>
+            <p>Para ofrecer la Aplicación de forma gratuita, trabajamos con proveedores de servicios externos (por ejemplo, Google AdMob) para la visualización de anuncios. Estos servicios pueden recopilar y procesar datos como identificadores de dispositivos, dirección IP, ubicación aproximada y cookies para mostrar anuncios relevantes y realizar análisis.</p>
+            <h3>3. Permisos del dispositivo</h3>
+            <p>La Aplicación requiere acceso al <strong>altavoz</strong> de su dispositivo para funcionar. Este permiso se utiliza únicamente para generar sonido; no se escucha ni graba nada.</p>
+            <h3>4. Contacto</h3>
+            <p>Si tiene alguna pregunta sobre esta política, contáctenos: <strong>burak_ayazz@icloud.com</strong></p>
+        </div>
+
+        <div id="de" class="policy-card">
+            <h2><i class="fas fa-flag"></i> Datenschutzerklärung (Deutsch)</h2>
+            <p><strong>Letzte Aktualisierung:</strong> 14. Dezember 2025</p>
+            <p>Diese Datenschutzerklärung erläutert, wie die von der App "Sonic Clean" ("App") gesammelten Daten verwendet werden. Durch die Nutzung der App stimmen Sie dieser Richtlinie zu.</p>
+            <h3>1. Von uns erhobene personenbezogene Daten</h3>
+            <p>Die App sammelt <strong>KEINE</strong> direkt personenbezogenen Daten wie Namen, E-Mail-Adressen oder genaue Standorte durch uns als Entwickler.</p>
+            <h3>2. Dienste und Anzeigen von Drittanbietern</h3>
+            <p>Um die App kostenlos anzubieten, arbeiten wir mit Drittanbietern (z. B. Google AdMob) für Anzeigen zusammen. Diese Dienste können Daten wie Gerätekennungen, IP-Adressen, ungefähre Standorte und Cookies sammeln, um relevante Anzeigen bereitzustellen und Analysen durchzuführen.</p>
+            <h3>3. Geräteberechtigungen</h3>
+            <p>Die App benötigt Zugriff auf den <strong>Lautsprecher</strong>. Diese Berechtigung wird nur zur Tonerzeugung verwendet; es wird nichts abgehört oder aufgezeichnet.</p>
+            <h3>4. Kontakt</h3>
+            <p>Bei Fragen zu dieser Richtlinie kontaktieren Sie uns bitte: <strong>burak_ayazz@icloud.com</strong></p>
+        </div>
+
+        <div id="fr" class="policy-card">
+            <h2><i class="fas fa-flag"></i> Politique de Confidentialité (Français)</h2>
+            <p><strong>Dernière mise à jour:</strong> 14 décembre 2025</p>
+            <p>Cette politique de confidentialité explique comment les données collectées par l'application "Sonic Clean" ("App") sont utilisées. En utilisant l'App, vous acceptez cette politique.</p>
+            <h3>1. Données personnelles collectées par nous</h3>
+            <p>L'App ne collecte <strong>PAS</strong> directement d'informations personnellement identifiables telles que les noms, adresses e-mail ou localisation précise par nous en tant que développeur.</p>
+            <h3>2. Services tiers et publicités</h3>
+            <p>Pour fournir l'App gratuitement, nous travaillons avec des fournisseurs tiers (par exemple, Google AdMob) pour l'affichage de publicités. Ces services peuvent collecter des données telles que des identifiants d'appareil, adresses IP, localisation approximative et cookies pour diffuser des publicités pertinentes.</p>
+            <h3>3. Autorisations de l'appareil</h3>
+            <p>L'App nécessite l'accès au <strong>haut-parleur</strong>. Cette autorisation est utilisée uniquement pour générer du son; aucune écoute n'a lieu.</p>
+            <h3>4. Contact</h3>
+            <p>Si vous avez des questions, contactez-nous: <strong>burak_ayazz@icloud.com</strong></p>
+        </div>
+
+        <div id="it" class="policy-card">
+            <h2><i class="fas fa-flag"></i> Informativa sulla Privacy (Italiano)</h2>
+            <p><strong>Ultimo aggiornamento:</strong> 14 dicembre 2025</p>
+            <p>Questa informativa spiega come vengono utilizzati i dati raccolti dall'app "Sonic Clean" ("App"). Utilizzando l'App, accetti questa informativa.</p>
+            <h3>1. Dati personali raccolti da noi</h3>
+            <p>L'App <strong>NON</strong> raccoglie direttamente informazioni identificabili personalmente come nomi, e-mail o posizione precisa da parte nostra come sviluppatore.</p>
+            <h3>2. Servizi di terze parti e annunci</h3>
+            <p>Per fornire l'App gratuitamente, collaboriamo con fornitori terzi (ad es. Google AdMob) per gli annunci. Questi servizi possono raccogliere dati come identificatori del dispositivo, indirizzi IP, posizione approssimativa e cookie per mostrare annunci pertinenti.</p>
+            <h3>3. Autorizzazioni del dispositivo</h3>
+            <p>L'App richiede l'accesso all'<strong>altoparlante</strong>. Questa autorizzazione viene utilizzata solo per generare suoni; non avviene alcun ascolto.</p>
+            <h3>4. Contatto</h3>
+            <p>Per domande su questa informativa, contattaci: <strong>burak_ayazz@icloud.com</strong></p>
+        </div>
+
+        <div id="pt" class="policy-card">
+            <h2><i class="fas fa-flag"></i> Política de Privacidade (Português)</h2>
+            <p><strong>Última atualização:</strong> 14 de dezembro de 2025</p>
+            <p>Esta política explica como os dados coletados pelo aplicativo "Sonic Clean" ("App") são usados. Ao usar o App, você concorda com esta política.</p>
+            <h3>1. Dados pessoais coletados por nós</h3>
+            <p>O App <strong>NÃO</strong> coleta diretamente informações de identificação pessoal como nomes, e-mails ou localização precisa por nós como desenvolvedor.</p>
+            <h3>2. Serviços de terceiros e anúncios</h3>
+            <p>Para fornecer o App gratuitamente, trabalhamos com fornecedores terceirizados (por exemplo, Google AdMob) para anúncios. Esses serviços podem coletar dados como identificadores de dispositivo, endereços IP, localização aproximada e cookies para exibir anúncios relevantes.</p>
+            <h3>3. Permissões do dispositivo</h3>
+            <p>O App requer acesso ao <strong>alto-falante</strong>. Esta permissão é usada apenas para gerar som; nenhuma escuta ocorre.</p>
+            <h3>4. Contatto</h3>
+            <p>Se tiver dúvidas sobre esta política, entre em contato conosco: <strong>burak_ayazz@icloud.com</strong></p>
+        </div>
+
+        <div id="ar" class="policy-card rtl">
+            <h2><i class="fas fa-flag"></i> سياسة الخصوصية (العربية)</h2>
+            <p><strong>آخر تحديث:</strong> 14 ديسمبر 2025</p>
+            <p>تشرح سياسة الخصوصية هذه كيفية استخدام البيانات التي يجمعها تطبيق "Sonic Clean" ("التطبيق"). باستخدام التطبيق، فإنك توافق على هذه السياسة.</p>
+            <h3>1. البيانات الشخصية التي نجمعها</h3>
+            <p>لا يقوم التطبيق بجمع معلومات التعريف الشخصية مباشرة مثل الأسماء أو رسائل البريد الإلكتروني أو الموقع الدقيق من قبلنا كمطور.</p>
+            <h3>2. خدمات الجهات الخارجية والإعلانات</h3>
+            <p>لتقديم التطبيق مجانًا، نعمل مع مزودي خدمات خارجيين (مثل Google AdMob) لعرض الإعلانات. قد تجمع هذه الخدمات بيانات مثل معرفات الجهاز وعناوين IP والموقع التقريبي وملفات تعريف الارتباط لعرض إعلانات ذات صلة.</p>
+            <h3>3. أذونات الجهاز</h3>
+            <p>يتطلب التطبيق الوصول إلى <strong>مكبر الصوت</strong>. يستخدم هذا الإذن فقط لتوليد الصوت؛ لا يتم الاستماع أو التسجيل.</p>
+            <h3>4. اتصال</h3>
+            <p>إذا كانت لديك أي أسئلة حول هذه السياسة، فيرجى الاتصال بنا: <strong>burak_ayazz@icloud.com</strong></p>
+        </div>
+
     </div>
 
-    <div id="es" class="lang-section anchor" lang="es">
-        <h2>Política de Privacidad (Español)</h2>
-        <p><strong>Última actualización:</strong> 14 de diciembre de 2025</p>
-        <p>Esta política de privacidad explica cómo se utilizan los datos recopilados por la aplicación "Sonic Clean" ("la Aplicación"). Al descargar y utilizar la Aplicación, usted acepta esta política.</p>
-        <h3>1. Datos personales recopilados por nosotros</h3>
-        <p>La Aplicación <strong>NO</strong> recopila directamente información de identificación personal como nombres de usuario, direcciones de correo electrónico, números de teléfono o ubicación precisa por nuestra parte como desarrollador.</p>
-        <h3>2. Servicios de terceros y anuncios</h3>
-        <p>Para ofrecer la Aplicación de forma gratuita, trabajamos con proveedores de servicios externos (por ejemplo, Google AdMob) para la visualización de anuncios. Estos servicios pueden recopilar y procesar datos como identificadores de dispositivos, dirección IP, ubicación aproximada y cookies para mostrar anuncios relevantes y realizar análisis.</p>
-        <h3>3. Permisos del dispositivo</h3>
-        <p>La Aplicación requiere acceso al <strong>altavoz</strong> de su dispositivo para funcionar. Este permiso se utiliza únicamente para generar sonido; no se escucha ni graba nada.</p>
-        <h3>4. Contacto</h3>
-        <p>Si tiene alguna pregunta sobre esta política, contáctenos: [burak_ayazz@icloud.com]</p>
-    </div>
-
-    <div id="de" class="lang-section anchor" lang="de">
-        <h2>Datenschutzerklärung (Deutsch)</h2>
-        <p><strong>Letzte Aktualisierung:</strong> 14. Dezember 2025</p>
-        <p>Diese Datenschutzerklärung erläutert, wie die von der App "Sonic Clean" ("App") gesammelten Daten verwendet werden. Durch die Nutzung der App stimmen Sie dieser Richtlinie zu.</p>
-        <h3>1. Von uns erhobene personenbezogene Daten</h3>
-        <p>Die App sammelt <strong>KEINE</strong> direkt personenbezogenen Daten wie Namen, E-Mail-Adressen oder genaue Standorte durch uns als Entwickler.</p>
-        <h3>2. Dienste und Anzeigen von Drittanbietern</h3>
-        <p>Um die App kostenlos anzubieten, arbeiten wir mit Drittanbietern (z. B. Google AdMob) für Anzeigen zusammen. Diese Dienste können Daten wie Gerätekennungen, IP-Adressen, ungefähre Standorte und Cookies sammeln, um relevante Anzeigen bereitzustellen und Analysen durchzuführen.</p>
-        <h3>3. Geräteberechtigungen</h3>
-        <p>Die App benötigt Zugriff auf den <strong>Lautsprecher</strong>. Diese Berechtigung wird nur zur Tonerzeugung verwendet; es wird nichts abgehört oder aufgezeichnet.</p>
-        <h3>4. Kontakt</h3>
-        <p>Bei Fragen zu dieser Richtlinie kontaktieren Sie uns bitte: [burak_ayazz@icloud.com]</p>
-    </div>
-
-    <div id="fr" class="lang-section anchor" lang="fr">
-        <h2>Politique de Confidentialité (Français)</h2>
-        <p><strong>Dernière mise à jour:</strong> 14 décembre 2025</p>
-        <p>Cette politique de confidentialité explique comment les données collectées par l'application "Sonic Clean" ("App") sont utilisées. En utilisant l'App, vous acceptez cette politique.</p>
-        <h3>1. Données personnelles collectées par nous</h3>
-        <p>L'App ne collecte <strong>PAS</strong> directement d'informations personnellement identifiables telles que les noms, adresses e-mail ou localisation précise par nous en tant que développeur.</p>
-        <h3>2. Services tiers et publicités</h3>
-        <p>Pour fournir l'App gratuitement, nous travaillons avec des fournisseurs tiers (par exemple, Google AdMob) pour l'affichage de publicités. Ces services peuvent collecter des données telles que des identifiants d'appareil, adresses IP, localisation approximative et cookies pour diffuser des publicités pertinentes.</p>
-        <h3>3. Autorisations de l'appareil</h3>
-        <p>L'App nécessite l'accès au <strong>haut-parleur</strong>. Cette autorisation est utilisée uniquement pour générer du son; aucune écoute n'a lieu.</p>
-        <h3>4. Contact</h3>
-        <p>Si vous avez des questions, contactez-nous: [burak_ayazz@icloud.com]</p>
-    </div>
-
-    <div id="it" class="lang-section anchor" lang="it">
-        <h2>Informativa sulla Privacy (Italiano)</h2>
-        <p><strong>Ultimo aggiornamento:</strong> 14 dicembre 2025</p>
-        <p>Questa informativa spiega come vengono utilizzati i dati raccolti dall'app "Sonic Clean" ("App"). Utilizzando l'App, accetti questa informativa.</p>
-        <h3>1. Dati personali raccolti da noi</h3>
-        <p>L'App <strong>NON</strong> raccoglie direttamente informazioni identificabili personalmente come nomi, e-mail o posizione precisa da parte nostra come sviluppatore.</p>
-        <h3>2. Servizi di terze parti e annunci</h3>
-        <p>Per fornire l'App gratuitamente, collaboriamo con fornitori terzi (ad es. Google AdMob) per gli annunci. Questi servizi possono raccogliere dati come identificatori del dispositivo, indirizzi IP, posizione approssimativa e cookie per mostrare annunci pertinenti.</p>
-        <h3>3. Autorizzazioni del dispositivo</h3>
-        <p>L'App richiede l'accesso all'<strong>altoparlante</strong>. Questa autorizzazione viene utilizzata solo per generare suoni; non avviene alcun ascolto.</p>
-        <h3>4. Contatto</h3>
-        <p>Per domande su questa informativa, contattaci: [burak_ayazz@icloud.com]</p>
-    </div>
-
-    <div id="pt" class="lang-section anchor" lang="pt">
-        <h2>Política de Privacidade (Português)</h2>
-        <p><strong>Última atualização:</strong> 14 de dezembro de 2025</p>
-        <p>Esta política explica como os dados coletados pelo aplicativo "Sonic Clean" ("App") são usados. Ao usar o App, você concorda com esta política.</p>
-        <h3>1. Dados pessoais coletados por nós</h3>
-        <p>O App <strong>NÃO</strong> coleta diretamente informações de identificação pessoal como nomes, e-mails ou localização precisa por nós como desenvolvedor.</p>
-        <h3>2. Serviços de terceiros e anúncios</h3>
-        <p>Para fornecer o App gratuitamente, trabalhamos com fornecedores terceirizados (por exemplo, Google AdMob) para anúncios. Esses serviços podem coletar dados como identificadores de dispositivo, endereços IP, localização aproximada e cookies para exibir anúncios relevantes.</p>
-        <h3>3. Permissões do dispositivo</h3>
-        <p>O App requer acesso ao <strong>alto-falante</strong>. Esta permissão é usada apenas para gerar som; nenhuma escuta ocorre.</p>
-        <h3>4. Contato</h3>
-        <p>Se tiver dúvidas sobre esta política, entre em contato conosco: [burak_ayazz@icloud.com]</p>
-    </div>
-
-    <div id="ar" class="lang-section anchor" lang="ar" dir="rtl">
-        <h2>سياسة الخصوصية (العربية)</h2>
-        <p><strong>آخر تحديث:</strong> 14 ديسمبر 2025</p>
-        <p>تشرح سياسة الخصوصية هذه كيفية استخدام البيانات التي يجمعها تطبيق "Sonic Clean" ("التطبيق"). باستخدام التطبيق، فإنك توافق على هذه السياسة.</p>
-        <h3>1. البيانات الشخصية التي نجمعها</h3>
-        <p>لا يقوم التطبيق بجمع معلومات التعريف الشخصية مباشرة مثل الأسماء أو رسائل البريد الإلكتروني أو الموقع الدقيق من قبلنا كمطور.</p>
-        <h3>2. خدمات الجهات الخارجية والإعلانات</h3>
-        <p>لتقديم التطبيق مجانًا، نعمل مع مزودي خدمات خارجيين (مثل Google AdMob) لعرض الإعلانات. قد تجمع هذه الخدمات بيانات مثل معرفات الجهاز وعناوين IP والموقع التقريبي وملفات تعريف الارتباط لعرض إعلانات ذات صلة.</p>
-        <h3>3. أذونات الجهاز</h3>
-        <p>يتطلب التطبيق الوصول إلى <strong>مكبر الصوت</strong>. يستخدم هذا الإذن فقط لتوليد الصوت؛ لا يتم الاستماع أو التسجيل.</p>
-        <h3>4. اتصال</h3>
-        <p>إذا كانت لديك أي أسئلة حول هذه السياسة، فيرجى الاتصال بنا: [burak_ayazz@icloud.com]</p>
-    </div>
+    <footer>
+        <p>&copy; 2025 Ayaz Software. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
-
